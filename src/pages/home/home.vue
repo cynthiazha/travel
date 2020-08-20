@@ -3,7 +3,6 @@
     <Header></Header>
     <home-swiper></home-swiper>
     <home-icons></home-icons>
-    <tickets></tickets>
   </div>
 </template>
 
