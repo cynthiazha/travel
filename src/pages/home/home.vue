@@ -1,16 +1,10 @@
 <template>
   <div>
-<<<<<<< HEAD
-    <Header></Header>
-    <home-swiper></home-swiper>
-    <home-icons></home-icons>
-=======
     <Header :city="city"></Header>
     <home-swiper :swiperList="swiperList"></home-swiper>
     <home-icons :iconList="iconList"></home-icons>
     <tickets :ticketsList="ticketsList"></tickets>
     <stragety :stragetyList="stragetyList"></stragety>
->>>>>>> index-recommend
   </div>
 </template>
 
@@ -18,20 +12,14 @@
 import Header from './components/header'
 import HomeSwiper from './components/swiper'
 import HomeIcons from './components/homeIcons'
-<<<<<<< HEAD
-=======
 import Tickets from './components/tickets'
 import Stragety from './components/travelStragety'
 import axios from 'axios'
->>>>>>> index-recommend
 export default {
   name: 'home',
   components: {
     Header,
     HomeSwiper,
-<<<<<<< HEAD
-    HomeIcons
-=======
     HomeIcons,
     Tickets,
     Stragety
@@ -62,11 +50,9 @@ export default {
         }
       })
     }
->>>>>>> index-recommend
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 </style>
