@@ -61,12 +61,12 @@ export default {
       padding: 0 10px;
       justify-content: space-between;
       .item{
-        width: 190px;
-        padding-bottom: 48%;
+        width: 49%;
         margin-top: 15px;
-        height: 0;
         .img-wrapper{
-          height: 118px;
+          width: 100%;
+          height: 0;
+          padding-bottom: 65%;
           border-radius: 8px;
           overflow: hidden;
           .img{
