@@ -35,7 +35,7 @@ export default {
     flex-wrap: wrap;
     height: 0;
     margin: 10px 0;
-    padding-bottom: 50%;
+    padding-bottom: 20%;
     overflow: hidden;
     .item {
       width: 20%;
