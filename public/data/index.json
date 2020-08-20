@@ -1,0 +1,83 @@
+{
+  "code": 1,
+  "data": {
+    "city": "杭州",
+    "iconList": [{
+      "id": "0001",
+      "imgUrl": "https://s.qunarzz.com/homenode/images/touchheader/hotel.png",
+      "title": "酒店"
+    }, {
+      "id": "0002",
+      "imgUrl": "https://s.qunarzz.com/homenode/images/touchheader/flight.png",
+      "title": "机票"
+    }, {
+      "id": "0003",
+      "imgUrl": "https://s.qunarzz.com/homenode/images/touchheader/train.png",
+      "title": "火车"
+    }, {
+      "id": "0004",
+      "imgUrl": "https://s.qunarzz.com/homenode/images/touchheader/package.png",
+      "title": "度假"
+    }, {
+      "id": "0005",
+      "imgUrl": "https://s.qunarzz.com/homenode/images/touchheader/piao.png",
+      "title": "景点门票"
+    }],
+    "swiperList": [{
+      "id": 1,
+      "imgUrl": "https://imgs.qunarzz.com/vc/e3/a1/71/f498dfd3bed948d623c9093252.jpg_92.jpg"
+    }, {
+      "id": 2,
+      "imgUrl": "https://imgs.qunarzz.com/vs_ceph_vcimg/c0a60fa20379efa4f02ce527a680dc1b.jpeg"
+    }, {
+      "id": 3,
+      "imgUrl": "https://imgs.qunarzz.com/vs_ceph_vcimg/b8c4527c41649814cc4cf86880abba54.jpeg"
+    }],
+    "ticketsList": [{
+      "id": 1,
+      "imgUrl": "https://img1.qunarzz.com/sight/p0/1706/e1/e1dbcc2f0ad04fe0a3.img.jpg_256x160_50d1396b.jpg",
+      "title": "丽水冒险岛水世界",
+      "desc": "中世纪欧洲为驯龙主题的乐园，开启奇幻水上之旅",
+      "price": "225"
+    },{
+      "id": 2,
+      "imgUrl": "https://img1.qunarzz.com/sight/p0/1607/21/2142167d4b1bfa84b4.water.jpg_256x160_ea65b4f7.jpg",
+      "title": "西塘古镇",
+      "desc": "水墨西塘让你感受古镇千年的诗情画意",
+      "price": "95"
+    },{
+      "id": 3,
+      "imgUrl": "https://img1.qunarzz.com/sight/p0/1905/44/44c6db1f35f281f6a3.water.jpg_256x160_249fdf75.jpg",
+      "title": "横店影视城",
+      "desc": "被誉为“中国的好莱坞”",
+      "price": "165"
+    },{
+      "id": 4,
+      "imgUrl": "https://img1.qunarzz.com/sight/p0/1603/8f/8fff2332dff679ec90.water.jpg_256x160_224237e3.jpg",
+      "title": "普陀山风景区",
+      "desc": "人间清净地 | 朝圣看日出",
+      "price": "35"
+    }],
+    "stragetyList": [{
+      "id": 11,
+      "imgUrl": "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg",
+      "title": "驾一叶扁舟，寻瓯江往事",
+      "desc": "我记得那里有条河，河边有颗茂密得连太阳都照不进来的大树"
+    },{
+      "id": 12,
+      "imgUrl": "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/fd16ccffb2e2376ff370bda3bebebd71.jpg",
+      "title": "不负嵊夏好时光，泗乎太安逸",
+      "desc": "世界上最远的距离就是，你知道嵊泗近在咫尺，却7年不曾踏上这颗东海遗珠"
+    },{
+      "id": 13,
+      "imgUrl": "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/c2ae82fcc9fa11fa253e5919c49bcfbf.jpg",
+      "title": "探访日本，一部家庭旅行画册",
+      "desc": "安藤忠雄有个外号叫“水泥诗人”。他的大部分作品都是围绕打孔的水泥完成的，有人会觉得这些作品是冰冷"
+    },{
+      "id": 14,
+      "imgUrl": "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/5a11974656794b4715156501be10c1b7.jpg",
+      "title": "厦门，带娃出行与幸福同行",
+      "desc": "很多人认为带小孩出游很麻烦，往往带小孩旅游比上班还累，在我看来，当然会很累，亲子游并不是大人带上"
+    }]
+  }
+}

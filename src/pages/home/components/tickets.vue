@@ -2,37 +2,13 @@
   <div class="tickets_content">
     <h3 class="title">特惠门票</h3>
     <ul class="list">
-      <li class="item">
+      <li class="item" v-for="item in ticketsList" :key="item.id">
         <div class="img-wrapper">
-          <img class="img" src="https://img1.qunarzz.com/sight/p0/1706/e1/e1dbcc2f0ad04fe0a3.img.jpg_256x160_50d1396b.jpg"/>
+          <img class="img" :src="item.imgUrl"/>
         </div>
-        <h4 class="name">丽水冒险岛水世界</h4>
-        <p class="desc">中世纪欧洲为驯龙主题的乐园，开启奇幻水上之旅</p>
-        <p class="price">￥225</p>
-      </li>
-      <li class="item">
-        <div class="img-wrapper">
-          <img class="img" src="https://img1.qunarzz.com/sight/p0/1607/21/2142167d4b1bfa84b4.water.jpg_256x160_ea65b4f7.jpg"/>
-        </div>
-        <h4 class="name">西塘古镇</h4>
-        <p class="desc">水墨西塘让你感受古镇千年的诗情画意</p>
-        <p class="price">￥95</p>
-      </li>
-      <li class="item">
-        <div class="img-wrapper">
-          <img class="img" src="https://img1.qunarzz.com/sight/p0/1905/44/44c6db1f35f281f6a3.water.jpg_256x160_249fdf75.jpg"/>
-        </div>
-        <h4 class="name">横店影视城</h4>
-        <p class="desc">被誉为“中国的好莱坞”</p>
-        <p class="price">￥165</p>
-      </li>
-      <li class="item">
-        <div class="img-wrapper">
-          <img class="img" src="https://img1.qunarzz.com/sight/p0/1603/8f/8fff2332dff679ec90.water.jpg_256x160_224237e3.jpg"/>
-        </div>
-        <h4 class="name">普陀山风景区</h4>
-        <p class="desc">人间清净地 | 朝圣看日出</p>
-        <p class="price">￥35</p>
+        <h4 class="name">{{item.title}}</h4>
+        <p class="desc">{{item.desc}}</p>
+        <p class="price">￥{{item.price}}</p>
       </li>
     </ul>
   </div>
@@ -40,7 +16,10 @@
 
 <script>
 export default {
-  name: 'tickets'
+  name: 'tickets',
+  props: {
+    ticketsList: Array
+  }
 }
 </script>
 
