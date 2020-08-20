@@ -1,31 +1,18 @@
 <template>
   <div class="icons">
-    <div class="item">
-      <img src="https://s.qunarzz.com/homenode/images/touchheader/hotel.png" class="img">
-      <p class="txt">酒店</p>
-    </div>
-    <div class="item">
-      <img src="https://s.qunarzz.com/homenode/images/touchheader/flight.png" class="img">
-      <p class="txt">机票</p>
-    </div>
-    <div class="item">
-      <img src="https://s.qunarzz.com/homenode/images/touchheader/train.png" class="img">
-      <p class="txt">火车</p>
-    </div>
-    <div class="item">
-      <img src="https://s.qunarzz.com/homenode/images/touchheader/package.png" class="img">
-      <p class="txt">度假</p>
-    </div>
-    <div class="item">
-      <img src="https://s.qunarzz.com/homenode/images/touchheader/piao.png" class="img">
-      <p class="txt">景点门票</p>
+    <div class="item" v-for="item in iconList" :key="item.id">
+      <img :src="item.imgUrl" class="img">
+      <p class="txt">{{item.title}}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'homeIcons'
+  name: 'homeIcons',
+  props: {
+    iconList: Array
+  }
 }
 </script>
 
