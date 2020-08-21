@@ -7,7 +7,9 @@
       <span class="iconfont">&#xe67d;</span>
       输入城市景点
     </div>
-    <div class="header-right">{{city}}<span class="iconfont">&#xe688;</span></div>
+    <router-link to="/city">
+      <div class="header-right">{{city}}<span class="iconfont">&#xe688;</span></div>
+    </router-link>
   </div>
 </template>
 
@@ -49,6 +51,7 @@ export default {
       width: 64px;
       flex-shrink: 0;
       text-align: center;
+      color: #fff;
     }
   }
 </style>

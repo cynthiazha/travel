@@ -40,7 +40,6 @@ export default {
     getData () {
       axios.get('/api/index.json').then((res) => {
         const result = res.data
-        console.log(result)
         if (result.code === 1) {
           this.city = result.data.city
           this.iconList = result.data.iconList

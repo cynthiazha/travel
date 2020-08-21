@@ -9,6 +9,10 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  }, {
+    path: '/city',
+    name: 'City',
+    component: () => import('@/pages/city/city')
   }
 ]
 
