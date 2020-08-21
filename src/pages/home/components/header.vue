@@ -8,16 +8,19 @@
       输入城市景点
     </div>
     <router-link to="/city">
-      <div class="header-right">{{city}}<span class="iconfont">&#xe688;</span></div>
+      <div class="header-right">{{currentCity}}<span class="iconfont">&#xe688;</span></div>
     </router-link>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'homeHeader',
-  props: {
-    city: String
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    })
   }
 }
 </script>
@@ -48,7 +51,8 @@ export default {
       box-sizing: border-box;
     }
     .header-right{
-      width: 64px;
+      min-width: 64px;
+      padding: 0 5px;
       flex-shrink: 0;
       text-align: center;
       color: #fff;
