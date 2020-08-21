@@ -10,35 +10,24 @@
       <div class="area">
         <p class="title">热门城市</p>
         <ul class="list">
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
+          <li class="item" v-for="item in hotcity" :key="item.id">
+            {{item.name}}
+          </li>
         </ul>
       </div>
-      <div class="area">
-        <p class="title">A</p>
-        <ul class="city-list">
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-        </ul>
-      </div>
-      <div class="area">
-        <p class="title">B</p>
-        <ul class="city-list">
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-          <li class="item">杭州</li>
-        </ul>
+      <div ref="letterContent">
+        <div class="area"
+          v-for="(item, key) of cities"
+          :key="key"
+          :ref="key"
+        >
+          <p class="title">{{key}}</p>
+          <ul class="city-list">
+            <li class="item" v-for="city in item" :key="city.id">
+              {{city.name}}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -47,9 +36,73 @@
 <script>
 import BScroll from '@better-scroll/core'
 export default {
+  props: {
+    hotcity: Array,
+    cities: Object,
+    activeLetter: String
+  },
+  data () {
+    return {
+      scrollY: 0,
+      timer: null,
+      cityOffsetArr: [] // 每个字母开头城市列表距顶部距离
+    }
+  },
+  computed: {
+    letters () {
+      const arr = []
+      for (const i in this.cities) {
+        arr.push(i)
+      }
+      return arr
+    },
+    activeLetterIndex () {
+      let activeIndex = 0
+      activeIndex = this.cityOffsetArr.findIndex((tops, index) => {
+        return this.scrollY >= tops && this.scrollY < this.cityOffsetArr[index + 1]
+      })
+      return (activeIndex > 0 ? activeIndex : 0)
+    }
+  },
   mounted () {
     const wrapperDom = this.$refs.listContent
-    this.Bscroll = new BScroll(wrapperDom)
+    this.Bscroll = new BScroll(wrapperDom, {
+      probeType: 3
+    })
+    this.getScrollVal()
+  },
+  updated () {
+    this.getCityItemOffset()
+  },
+  watch: {
+    activeLetter () {
+      const dom = this.$refs[this.activeLetter][0]
+      this.Bscroll.scrollToElement(dom, 1000)
+    }
+  },
+  methods: {
+    getCityItemOffset () {
+      const itemArr = []
+      const allList = this.$refs.letterContent.getElementsByClassName('area')
+      Array.prototype.slice.call(allList).forEach(el => {
+        const top = el.offsetTop
+        itemArr.push(top)
+      })
+      this.cityOffsetArr = itemArr
+    },
+    getScrollVal () {
+      this.Bscroll.on('scroll', (e) => {
+        this.scrollY = Math.abs(e.y)
+        if (this.timer) {
+          clearTimeout(this.timer)
+        }
+        this.timer = setTimeout(() => {
+          if (this.activeLetterIndex >= 0 && this.activeLetterIndex < this.letters.length) {
+            this.$emit('change', this.letters[this.activeLetterIndex])
+          }
+        }, 16)
+      })
+    }
   }
 }
 </script>
@@ -68,6 +121,7 @@ export default {
     padding: 0 10px;
     line-height: 40px;
     background-color: #f1f1f1;
+    font-size: 16px;
   }
   .list{
     padding: 10px 40px 0 10px;
@@ -83,6 +137,7 @@ export default {
       border: .5px solid #ddd;
       border-radius: 4px;
       color: #666;
+      font-size: 14px;
     }
   }
   .city-list{
@@ -91,6 +146,7 @@ export default {
       line-height: 34px;
       color: #666;
       border-bottom: .5px solid #ddd;
+      font-size: 14px;
     }
   }
 </style>
