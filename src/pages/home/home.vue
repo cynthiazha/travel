@@ -15,6 +15,7 @@ import HomeIcons from './components/homeIcons'
 import Tickets from './components/tickets'
 import Stragety from './components/travelStragety'
 import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
   name: 'home',
   components: {
@@ -26,18 +27,30 @@ export default {
   },
   data () {
     return {
+      lastCity: '',
       iconList: [],
       swiperList: [],
       ticketsList: [],
       stragetyList: []
     }
   },
+  computed: {
+    ...mapState(['city'])
+  },
   mounted () {
+    this.lastCity = this.city
     this.getData()
+  },
+  activated () { // 页面重新被显示触发
+    if (this.lastCity !== this.city) {
+      this.getData()
+      this.lastCity = this.city
+      console.log('active')
+    }
   },
   methods: {
     getData () {
-      axios.get('/api/index.json').then((res) => {
+      axios.get('/api/index.json?city=' + this.city).then((res) => {
         const result = res.data
         if (result.code === 1) {
           this.iconList = result.data.iconList
