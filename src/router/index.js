@@ -13,6 +13,10 @@ const routes = [
     path: '/city',
     name: 'City',
     component: () => import('@/pages/city/city')
+  }, {
+    path: '/detail/:id',
+    name: 'Deatil',
+    component: () => import('@/pages/detail/detail')
   }
 ]
 

@@ -2,14 +2,14 @@
   <div class="tickets_content">
     <h3 class="title">特惠门票</h3>
     <ul class="list">
-      <li class="item" v-for="item in ticketsList" :key="item.id">
+      <router-link :to="'/detail/'+item.id" tag="li" class="item" v-for="item in ticketsList" :key="item.id">
         <div class="img-wrapper">
           <img class="img" :src="item.imgUrl"/>
         </div>
         <h4 class="name">{{item.title}}</h4>
         <p class="desc">{{item.desc}}</p>
         <p class="price">￥{{item.price}}</p>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
