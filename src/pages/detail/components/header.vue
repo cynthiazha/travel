@@ -1,15 +1,15 @@
 <template>
   <div class="header_content">
-    <div class="header_back" v-show="showBackIcon">
+    <router-link class="header_back" v-show="showBackIcon" tag="div" to="/">
       <span class="iconfont">&#xe685;</span>
-    </div>
-    <div class="header_fixed" v-show="!showBackIcon">
+    </router-link>
+    <div class="header_fixed" v-show="!showBackIcon" :style="opacityStyle">
       <router-link to="/">
         <div class="header-left">
           <span class="iconfont">&#xe685;</span>
         </div>
       </router-link>
-      <p class="name">城市选择</p>
+      <p class="name">{{sightName}}</p>
     </div>
   </div>
 </template>
@@ -17,9 +17,34 @@
 <script>
 export default {
   name: 'DetailHeader',
+  props: {
+    sightName: String
+  },
   data () {
     return {
-      showBackIcon: true
+      showBackIcon: true,
+      opacityStyle: {
+        opacity: 0
+      }
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll () {
+      const top = document.documentElement.scrollTop
+      if (top > 60) {
+        let opacity = top / 140
+        opacity = opacity > 1 ? 1 : opacity
+        this.opacityStyle = { opacity }
+        this.showBackIcon = false
+      } else {
+        this.showBackIcon = true
+      }
     }
   }
 }

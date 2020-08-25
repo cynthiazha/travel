@@ -1,7 +1,7 @@
 <template>
   <div class="banner-container">
     <div class="banner" @click="handleShowGallery">
-      <img class="img" src="https://img1.qunarzz.com/vs_ceph_vs_tts/a6dfbbd3-8112-4050-bbec-c569404b6e21.jpg_r_640x420x95_264bfb57.jpg" alt="">
+      <img class="img" :src="bannerImgs[2]" alt="">
       <div class="bottom_info">
         <p class="name">自由行-暑假家庭亲子游云南丽江 连住3万游云南丽江 连住3万</p>
         <p class="pic_num"><span class="iconfont">&#xe67d;</span>39</p>
@@ -26,10 +26,12 @@ export default {
     Gallery,
     FadeAnimation
   },
+  props: {
+    bannerImgs: Array
+  },
   data () {
     return {
-      showGallery: false,
-      bannerImgs: ['https://img1.qunarzz.com/vs_ceph_vs_tts/99b0cacd-e7a2-486f-beb2-2728f38ada3e.jpg_r_1280x840x95_ea5068fb.jpg', 'https://img1.qunarzz.com/vs_ceph_vs_tts/a6dfbbd3-8112-4050-bbec-c569404b6e21.jpg_r_1280x840x95_8817947a.jpg', 'https://img1.qunarzz.com/vs_ceph_vs_tts/eb1bcfad-2f0e-4db9-8af8-27856e178550.jpg_r_1280x840x95_83c3b9c6.jpg']
+      showGallery: false
     }
   },
   methods: {
